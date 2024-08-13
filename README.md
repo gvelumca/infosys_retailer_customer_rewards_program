@@ -68,3 +68,45 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Retailer Rewards Program
+
+This project calculates reward points for customers based on their transactions.
+
+## Getting Started
+
+1. Clone the repository:
+    ```bash
+    git clone <YOUR_GITHUB_REPO_URL>
+    cd retailer-rewards
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Start the application:
+    ```bash
+    npm start
+    ```
+
+4. Run tests:
+    ```bash
+    npm test
+    ```
+
+## Project Structure
+
+- `src/api.js`: Simulates an API call to fetch transaction data.
+- `src/components/TransactionTable.js`: Component to display transaction data.
+- `src/components/RewardsSummary.js`: Component to display rewards summary.
+- `src/utils/calculatePoints.js`: Utility functions to calculate reward points.
+- `src/App.js`: Main application component.
+- `src/utils/calculatePoints.test.js`: Unit tests for utility functions.
+
+## Requirements
+
+- Node.js
+- npm
