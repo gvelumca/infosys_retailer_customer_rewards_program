@@ -4,6 +4,8 @@
  * Date: August 13, 2024
  */
 
+import { getMonthName } from '../helpers/dateHelpers';
+
 export const calculatePoints = (amount) => {
   if (amount <= 50) return 0;
   if (amount <= 100) return amount - 50;
@@ -13,7 +15,8 @@ export const calculatePoints = (amount) => {
 export const calculateRewards = (transactions) => {
   const customerRewards = transactions.reduce((acc, tx) => {
     const points = calculatePoints(tx.amount);
-    const month = new Date(tx.date).toLocaleString('default', { month: 'long' });
+    const month = getMonthName(tx.date); // Use getMonthName instead of direct Date methods
+    console.log('Transaction:', tx, 'Month:', month); // Debugging
 
     if (!acc[tx.customerId]) {
       acc[tx.customerId] = {
