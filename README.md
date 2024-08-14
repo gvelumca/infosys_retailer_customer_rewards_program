@@ -86,6 +86,30 @@ This application calculates and displays reward points for customers based on th
 - `src/App.test.js`: Unit tests for the main application component.
 - `src/components/TransactionTable.test.js`: Unit tests for the TransactionTable component.
 
+## Key Features
+
+- **Max Reusability**: 
+  - Utilized modular components and helper functions to maximize reusability across the application. Components and functions are designed to be independent and reusable, improving maintainability and reducing redundancy.
+
+- **Exception/Error Handling**: 
+  - Implemented comprehensive error handling for API calls to ensure robustness. Error boundaries are used in React components to gracefully handle unexpected errors and display user-friendly messages.
+
+- **Optimal Code and Performance**: 
+  - Optimized application performance using memoized components to prevent unnecessary re-renders. Data processing is performed efficiently to ensure smooth user experience even with large datasets.
+
+- **Documentation**: 
+  - Included detailed comments within the code and a comprehensive README file with setup and usage instructions. The documentation helps new developers quickly understand the project's structure and functionality.
+
+- **Test Coverage**: 
+  - Implemented unit tests using Jest and React Testing Library to ensure code quality and reliability. Tests cover utility functions, components, and integration scenarios to catch issues early and verify functionality.
+
+- **TailwindCSS Integration**: 
+  - **Utility-First CSS Framework**: TailwindCSS is used for styling the application, allowing for rapid UI development with a utility-first approach. This method promotes the use of low-level utility classes to build custom designs without needing to write custom CSS.
+  - **Configuration**: TailwindCSS is configured via the `tailwind.config.js` file, where custom colors, fonts, and other design tokens are defined. This ensures consistent styling across the application.
+  - **Responsive Design**: TailwindCSS provides built-in responsive design utilities to make the application adaptable to various screen sizes. Media queries and responsive classes are used to ensure the application looks great on mobile, tablet, and desktop devices.
+  - **Custom Styling**: Used Tailwind's `@apply` directive for creating reusable CSS classes and maintaining a consistent design system across components.
+  - **Development Efficiency**: The use of TailwindCSS enhances development speed by reducing the need for custom CSS and enabling the use of pre-defined utility classes.
+
 ## Helper Functions
 
 ### `src/helpers/dateHelpers.js`
