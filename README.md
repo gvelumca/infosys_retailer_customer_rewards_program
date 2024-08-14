@@ -1,9 +1,7 @@
 /**
-
  * Author: Velu Guruvareddy
  * Email: gvelumca@gmail.com
  * Date: August 13, 2024
-
  **/
 
 # Retailer Rewards Program
@@ -29,7 +27,8 @@ This application calculates and displays reward points for customers based on th
   - Utilized modular components and helper functions to maximize reusability across the application. Components and functions are designed to be independent and reusable, improving maintainability and reducing redundancy.
 
 - **Exception/Error Handling**: 
-  - Implemented comprehensive error handling for API calls to ensure robustness. Error boundaries are used in React components to gracefully handle unexpected errors and display user-friendly messages.
+  - Implemented comprehensive error handling for API calls to ensure robustness. 
+  - **Error Boundaries**: Added error boundaries in React components to gracefully handle unexpected errors and display user-friendly messages. This approach ensures that the application remains functional even if some components fail.
 
 - **Optimal Code and Performance**: 
   - Optimized application performance using memoized components to prevent unnecessary re-renders. Data processing is performed efficiently to ensure smooth user experience even with large datasets.
@@ -52,6 +51,7 @@ This application calculates and displays reward points for customers based on th
 - `src/api.js`: Simulates an API call to fetch transaction data.
 - `src/components/TransactionTable.js`: Component to display transaction data.
 - `src/components/RewardsSummary.js`: Component to display rewards summary.
+- `src/components/ErrorBoundary.js`: Component to handle and display errors gracefully.
 - `src/helpers/dateHelpers.js`: Contains helper functions for date formatting.
 - `src/utils/calculatePoints.js`: Utility functions to calculate reward points.
 - `src/utils/calculatePoints.test.js`: Unit tests for utility functions.
@@ -120,6 +120,13 @@ Unit tests for the TransactionTable component:
   - Verifies that customer names, transaction dates, amounts, and points are displayed correctly.
   - Tests error handling for invalid data format.
   - Ensures a message is displayed when no transactions are available.
+
+### `src/components/ErrorBoundary.js`
+
+Component for handling and displaying errors:
+
+- **Purpose**: Wraps application components to catch JavaScript errors anywhere in the component tree and display a fallback UI.
+- **Features**: Provides a user-friendly error message when an error occurs, preventing the entire app from crashing and improving the user experience.
 
 ## Testing
 
