@@ -72,41 +72,116 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Retailer Rewards Program
 
-This project calculates reward points for customers based on their transactions.
-
-## Getting Started
-
-1. Clone the repository:
-    ```bash
-    git clone <YOUR_GITHUB_REPO_URL>
-    cd retailer-rewards
-    ```
-
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-
-3. Start the application:
-    ```bash
-    npm start
-    ```
-
-4. Run tests:
-    ```bash
-    npm test
-    ```
+This application calculates and displays reward points for customers based on their transaction history. It includes utility functions for points calculation, components for displaying transaction data and rewards summary, and helper functions for date formatting.
 
 ## Project Structure
 
 - `src/api.js`: Simulates an API call to fetch transaction data.
 - `src/components/TransactionTable.js`: Component to display transaction data.
 - `src/components/RewardsSummary.js`: Component to display rewards summary.
+- `src/helpers/dateHelpers.js`: Contains helper functions for date formatting.
 - `src/utils/calculatePoints.js`: Utility functions to calculate reward points.
-- `src/App.js`: Main application component.
 - `src/utils/calculatePoints.test.js`: Unit tests for utility functions.
+- `src/App.js`: Main application component.
+- `src/App.test.js`: Unit tests for the main application component.
+- `src/components/TransactionTable.test.js`: Unit tests for the TransactionTable component.
 
-## Requirements
+## Helper Functions
 
-- Node.js
-- npm
+### `src/helpers/dateHelpers.js`
+
+Contains helper functions for date formatting:
+
+- **`getMonthName(dateStr: string): string`**
+  - Converts a date string into the full month name.
+  - **Parameters:**
+    - `dateStr`: The date string to format.
+  - **Returns:**
+    - The full month name (e.g., "January", "February").
+
+## Utility Functions
+
+### `src/utils/calculatePoints.js`
+
+Contains utility functions for calculating reward points:
+
+- **`calculatePoints(amount: number): number`**
+  - Calculates reward points based on the transaction amount.
+  - **Parameters:**
+    - `amount`: The transaction amount.
+  - **Returns:**
+    - The calculated points.
+
+- **`calculateRewards(transactions: Array): Array`**
+  - Calculates rewards based on an array of transaction objects.
+  - **Parameters:**
+    - `transactions`: An array of transaction objects, where each object includes `customerId`, `name`, `date`, and `amount`.
+  - **Returns:**
+    - An array of customer reward summaries, each including `name`, `totalPoints`, and `monthlyPoints`.
+
+## Components and Tests
+
+### `src/App.js`
+
+The main application component.
+
+### `src/App.test.js`
+
+Unit tests for the main application component:
+
+- **Tests:**
+  - Verifies that the "Transactions" header is rendered.
+  - Verifies that the "Rewards Summary" header is rendered.
+
+### `src/components/TransactionTable.js`
+
+Component to display transaction data in a table format.
+
+### `src/components/TransactionTable.test.js`
+
+Unit tests for the TransactionTable component:
+
+- **Tests:**
+  - Verifies that the "Transactions" header is rendered.
+  - Checks that all transaction rows are rendered correctly.
+  - Verifies that customer names, transaction dates, amounts, and points are displayed correctly.
+  - Tests error handling for invalid data format.
+  - Ensures a message is displayed when no transactions are available.
+
+## Testing
+
+Unit tests are included to verify the functionality of the utility functions and components:
+
+- **`src/utils/calculatePoints.test.js`**
+  - Tests for the `calculatePoints` and `calculateRewards` functions.
+  - Uses Jest for mocking and assertions.
+
+- **`src/App.test.js`**
+  - Tests for the `App` component.
+
+- **`src/components/TransactionTable.test.js`**
+  - Tests for the `TransactionTable` component.
+
+## Installation
+
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+1. Start the application:
+    ```bash
+    npm start
+    ```
+2. Open `http://localhost:3000` in your browser to view the application.
+
+## Running Tests
+
+To run the unit tests, use the following command:
+
+```bash
+npm test
